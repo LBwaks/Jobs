@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<title>{% block title %} {%endblock%} </title>
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg" />
+
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" href="{% static 'plugins/lineicons/css/LineIcons.2.0.css' %}" />
+<link rel="stylesheet" href="{% static 'plugins/animate/css/animate.css' %}" />
+<link rel="stylesheet" href="{% static 'plugins/tiny-slider/tiny-slider.css' %}" />
+<link rel="stylesheet" href="{% static 'plugins/glightbox/css/glightbox.min.css' %}" />
+<link rel="stylesheet" href="{% static 'css/kazi.css' %}" />
+</head>
+{% block header %}
+{% include 'includes/header.html' %}
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+{% block footer %}
+{% include 'includes/footer.html' %}
+{% endblock %}
+
+
+{% comment %} <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/bootstrap.min.js"></script> {% endcomment %}
+<script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %} "></script>
+<script src="{% static 'plugins/animate/js/wow.min.js' %} "></script>
+<script src=" {% static 'plugins/tiny-slider/tiny-slider.js' %}"></script>
+<script src="{% static 'plugins/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'js/kazi.js' %} "></script>
+<script type="text/javascript">
+        //====== Clients Logo Slider
+        tns({
+            container: '.client-logo-carousel',
+            slideBy: 'page',
+            autoplay: true,
+            autoplayButtonOutput: false,
+            mouseDrag: true,
+            gutter: 15,
+            nav: false,
+            controls: false,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                540: {
+                    items: 2,
+                },
+                768: {
+                    items: 3,
+                },
+                992: {
+                    items: 4,
+                },
+                1170: {
+                    items: 6,
+                }
+            }
+        });
+        //========= testimonial 
+        tns({
+            container: '.testimonial-slider',
+            items: 1,
+            slideBy: 'page',
+            autoplay: false,
+            mouseDrag: true,
+            gutter: 0,
+            nav: false,
+            controls: true,
+            controlsText: ['<i class="lni lni-arrow-left"></i>', '<i class="lni lni-arrow-right"></i>'],
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                540: {
+                    items: 1,
+                },
+                768: {
+                    items: 1,
+                },
+                992: {
+                    items: 1,
+                },
+                1170: {
+                    items: 1,
+                }
+            }
+        });
+
+        //========= glightbox
+        GLightbox({
+            'href': 'https://www.youtube.com/watch?v=cz4z8CyvDas',
+            'type': 'video',
+            'source': 'youtube', //vimeo, youtube or local
+            'width': 900,
+            'autoplayVideos': true,
+        });
+    </script>
+{% comment %} <script defer src="../../../static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"696321af7ca8d739","version":"2021.8.1","r":1,"token":"93dd3b16eaea413cbf84c7c6b5a1817a","si":10}'></script> {% endcomment %}
+</body>
+
+<!-- Mirrored from demo.graygrids.com/themes/jobgrids/index.html by HTTrack Website Copier/3.x [XR&CO'2017], Wed, 29 Sep 2021 06:26:44 GMT -->
+</html>

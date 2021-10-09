@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %} Jobs{%endblock%}
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+<br><br><br><br><br><br><br><br>
+<div class="container">
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+{{ myform.media }}
+{{ form|crispy }}
+{{ form|as_crispy_errors }}
+
+<div class="d-grid gap-2 col-6 mx-auto">
+  
+  <button class="btn btn-primary" >Submit</button>
+</div>
+</form>
+</div>
+{% endblock %}

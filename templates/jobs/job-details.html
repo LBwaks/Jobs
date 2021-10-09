@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block title %} Jobs{%endblock%}
+{% block content %}
+{% load static %}
+
+<br><br><br><br><br><br><br><br>
+<div class="container"> 
+<a href="{% url 'apply_job' job.slug %}" class="btn btn-primary btn-sm"> Apply Job</a> <br>
+{{job.user}}
+<br>
+{{job.title}}
+<br>
+{{job.tag}}
+<br>
+{{job.description}}
+<br>
+{{job.done_by_date}}
+<br>
+{{job.done_at_date}}
+<br>
+{{job.location_county}}
+<br>
+{{job.location_town}}
+<br>
+{{job.location_address_location}}
+<br>
+{{job.location_exact_job_location}}
+<br>
+{{job.job_reference}}
+<br>
+{{job.status}}
+<br>
+{{job.is_featured}}
+<br>
+{{job.is_cancelled}}
+<br>
+{{job.image}}
+<br>
+{{job.video}}
+<br>
+{{job.created_date}}
+<br>
+<div>
+<a href="{% url 'update_job' job.slug %}" class="btn-sm btn-primary"> Edit Job</a></div>
+<br>
+<button class="btn-sm btn-danger">Delete Job</button></div>
+
+</div>
+<br><br><br>
+{% comment %} <br><br><br><br><br> {% endcomment %}
+
+{% for application in job.job_applications.all %}
+<div class="card">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    
+    <p class="card-text"> ksh: {{application.charge}}    .</p>
+     <p class="card-text">time: {{application.created_at}}.</p>
+    <a href="{% url 'approve' job.slug.application.application_uuid %}" class="btn btn-primary btn-sm">Approve</a>
+  </div>
+</div>
+
+   
+
+
+
+{% endfor%}
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %} Jobs{%endblock%}
+{% block content %}
+{% load static %}
+<br><br><br><br><br><br><br><br>
+<a href="{% url 'add_job' %}">Add job</a>
+<section class="find-job job-list section">
+<div class="container">
+<div class="single-head">
+<div class="row">
+{% for application in object_list %}
+ 
+ 
+
+ <div class="card">
+  <h5 class="card-header">Featured</h5>
+  <div class="card-body">
+    <h5 class="card-title">{{application.job}}</h5>
+    <p class="card-text">{{application.charge}}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+{% endfor %}
+{% comment %} <div class="col-lg-6 col-12">
+<div class="single-job">
+<div class="job-image">
+<img src="assets/images/jobs/img6.png" alt="#">
+</div>
+<div class="job-content">
+<h4><a href="job-details.html">Product Designer</a></h4>
+<p>We are looking for Enrollment Advisors who are looking to take 30-35 appointments per
+week. All leads are pre-scheduled. </p>
+<ul>
+<li><i class="lni lni-website"></i><a href="#"> winbrans.com</a></li>
+<li><i class="lni lni-dollar"></i> $20k - $25k</li>
+<li><i class="lni lni-map-marker"></i> New York, USA</li>
+</ul>
+</div>
+<div class="job-button">
+<ul>
+<li><a href="job-details.html">Apply</a></li>
+<li><span>full time</span></li>
+</ul>
+</div>
+</div>
+
+</div> {% endcomment %}
+</div>
+
+<div class="row">
+<div class="col-12">
+<div class="pagination center">
+<ul class="pagination-list">
+<li><a href="#"><i class="lni lni-arrow-left"></i></a></li>
+<li class="active"><a href="#">1</a></li>
+<li><a href="#">2</a></li>
+<li><a href="#">3</a></li>
+<li><a href="#">4</a></li>
+<li><a href="#"><i class="lni lni-arrow-right"></i></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+{% endblock %}
